@@ -1,0 +1,11 @@
+services:
+  angular:
+    container_name: flutter-container
+    image: flutter_web:latest
+    build:
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      - TZ=Asia/Bangkok
+    ports:
+      - 80:80

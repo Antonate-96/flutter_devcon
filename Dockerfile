@@ -1,5 +1,5 @@
 #STAGE 1 build Flutter web
-FROM flutter_devcon:latest as builder
+FROM flutter_devcon:latest AS builder
 WORKDIR /app
 COPY . .
 RUN flutter pub get
