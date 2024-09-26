@@ -1,5 +1,5 @@
 services:
-  angular:
+  flutter_web:
     container_name: flutter-container
     image: flutter_web:latest
     build:
