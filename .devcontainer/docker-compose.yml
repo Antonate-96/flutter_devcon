@@ -1,6 +1,6 @@
 services:
   app:
-    image: flutter_devcon:latest
+    image: flutter_devcon:3.24.3
     build:
       context: .
       dockerfile: Dockerfile
