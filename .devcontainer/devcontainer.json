@@ -2,16 +2,31 @@
 // https://github.com/lucashilles/flutter-dev-container
 {
   "name": "Flutter",
-  "dockerFile": "Dockerfile",
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  // Use this environment variable if you need to bind mount your local source code into a new container.
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
   },
-  // Add the IDs of extensions you want installed when the container is created.
+  "features": {
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "enableNonRootDocker": "true",
+      "moby": "true"
+    }
+  },
   "extensions": [
-    "dart-code.dart-code",
-    "dart-code.flutter"
-  ],
+    "Dart-Code.dart-code",
+    "Dart-Code.flutter",
+    "mhutchie.git-graph"
+  ]
+  // "dockerFile": "Dockerfile",
+  // Set *default* container specific settings.json values on container create.
+  // "settings": {
+  //   "terminal.integrated.shell.linux": "/bin/bash",
+  // },
+  // Add the IDs of extensions you want installed when the container is created.
   // This command create an example project after the container is created.
   // "postCreateCommand": "flutter create web_project",
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
